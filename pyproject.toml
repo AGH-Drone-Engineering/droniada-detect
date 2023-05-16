@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "droniada-detect"
+version = "0.1.0"
+description = ""
+authors = ["Jakub Karbowski <carbon225@proton.me>"]
+readme = "README.md"
+packages = [{include = "droniada_detect"}]
+
+[tool.poetry.scripts]
+droniada_detector = "droniada_detect.detector:detect_camera"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+ultralytics = "^8.0.103"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
