@@ -4,8 +4,11 @@ import argparse
 import os
 
 
+DEFAULT_MODEL = 'v8nano2.pt'
+
+
 class DroniadaDetector:
-    def __init__(self, conf=0.5, iou=0.5, model='v8nano1.pt'):
+    def __init__(self, conf=0.5, iou=0.5, model=DEFAULT_MODEL):
         model_path = os.path.join(os.path.dirname(__file__), 'models', model)
         self.model = YOLO(model_path)
         self.conf = conf
@@ -27,7 +30,7 @@ class DroniadaDetector:
 def detect_camera():
     parser = argparse.ArgumentParser()
     parser.add_argument('--src', type=str, default='0')
-    parser.add_argument('--model', type=str, default='v8nano1.pt')
+    parser.add_argument('--model', type=str, default=DEFAULT_MODEL)
     parser.add_argument('--conf', type=float, default=0.5)
     parser.add_argument('--iou', type=float, default=0.5)
     args = parser.parse_args()
