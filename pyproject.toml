@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "droniada-detect"
-version = "0.2.0"
+version = "0.2.1"
 description = ""
 authors = ["Jakub Karbowski <carbon225@proton.me>"]
 readme = "README.md"
@@ -10,8 +10,11 @@ packages = [{include = "droniada_detect"}]
 droniada_detector = "droniada_detect.detector:detect_camera"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.8"
 ultralytics = "^8.0.103"
+
+[tool.poetry.group.dev.dependencies]
+urllib3 = "<2.0.0"
 
 [build-system]
 requires = ["poetry-core"]
